@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WARTEGKASET — Racik Nasi Bungkus ala Kaset Pita</title>
+<meta name="description" content="Racik nasi bungkus warteg semudah memutar kaset: pilih lauk, tekan REKAM, pesanan jadi track baru + struk siap salin ke WA.">
+<meta name="theme-color" content="#1e2b1e">
+<link rel="canonical" href="https://kayzenn123.github.io/agent-wartegkaset/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WARTEGKASET — Racik Nasi Bungkus ala Kaset Pita">
+<meta property="og:description" content="Pilih lauk, tekan REKAM, pesanan jadi track baru + struk siap salin ke WA.">
+<meta property="og:image" content="og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WARTEGKASET — Racik Nasi Bungkus ala Kaset Pita">
+<meta name="twitter:description" content="Pilih lauk, tekan REKAM, pesanan jadi track baru + struk siap salin ke WA.">
+<meta name="twitter:image" content="og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preload" href="fonts/angkor-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/cousine-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#konten">Lompat ke konten</a>
+<div class="grain" aria-hidden="true"></div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<!-- ===== ikon transport & UI (duotone, stroke) ===== -->
+<symbol id="i-play" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M8 5.5v13l11-6.5z"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M8 5.5v13l11-6.5z" opacity=".35"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M8 5v14M16 5v14"/></symbol>
+<symbol id="i-stop" viewBox="0 0 24 24"><rect style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" x="7" y="7" width="10" height="10" rx="1.5"/></symbol>
+<symbol id="i-rewind" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M11 6l-6 6 6 6V6z"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M18 6l-6 6 6 6V6z"/></symbol>
+<symbol id="i-ff" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M13 6l6 6-6 6V6z"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M6 6l6 6-6 6V6z"/></symbol>
+<symbol id="i-prev" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M6 5v14"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M19 6l-8 6 8 6V6z"/></symbol>
+<symbol id="i-next" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M18 5v14"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M5 6l8 6-8 6V6z"/></symbol>
+<symbol id="i-record" viewBox="0 0 24 24"><circle style="fill:var(--accent-2);stroke:var(--accent-2);stroke-width:var(--isw,1.8)" cx="12" cy="12" r="6.5"/></symbol>
+<symbol id="i-eject" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 5l8 11H4z"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M5 19.5h14"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-minus" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M5 12h14"/></symbol>
+<symbol id="i-trash" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M4 7h16M9 7V5h6v2M6.5 7l1 13h9l1-13"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M10 11v6M14 11v6"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" x="9" y="9" width="11" height="11" rx="2"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M5 15V6a2 2 0 0 1 2-2h9"/></symbol>
+<symbol id="i-download" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 4v11M7.5 11.5L12 16l4.5-4.5"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M5 20h14"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M4.5 12.5l5 5 10-11"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="i-link" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></symbol>
+<symbol id="i-share" viewBox="0 0 24 24"><circle style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="6" cy="12" r="2.5"/><circle style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="17" cy="6" r="2.5"/><circle style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="17" cy="18" r="2.5"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M8.2 10.8l6.6-3.6M8.2 13.2l6.6 3.6"/></symbol>
+<!-- ===== 3 custom: kaset, spul bergigi, bungkus nasi ===== -->
+<symbol id="i-kaset" viewBox="0 0 48 32"><rect style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" x="2" y="3" width="44" height="26" rx="3"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M8 26l4-7h24l4 7"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="15" cy="13" r="4.5"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="33" cy="13" r="4.5"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M19.5 13h9"/></symbol>
+<symbol id="i-reel" viewBox="0 0 48 48"><circle style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="24" cy="24" r="17" stroke-dasharray="4.5 3.2"/><circle style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="24" cy="24" r="6.5"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M24 6v6M24 36v6M6 24h6M36 24h6M11.3 11.3l4.2 4.2M32.5 32.5l4.2 4.2M36.7 11.3l-4.2 4.2M15.5 32.5l-4.2 4.2"/></symbol>
+<symbol id="i-bungkus" viewBox="0 0 48 48"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M10 14h28l-4 22a3 3 0 0 1-3 2.5H17a3 3 0 0 1-3-2.5z"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M10 14l7-8h14l7 8"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M24 6v6M19 26h10"/></symbol>
+<!-- ===== 16 lauk duotone ===== -->
+<symbol id="i-ayam" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M15.5 3.5c3 0 5.5 2.6 5.5 5.8 0 2.4-1.5 4.4-3.6 5.3L14 17.5l-1.6 3.6a1.6 1.6 0 0 1-2.9-1.3l1.3-2.9-2.9-2.9a5.8 5.8 0 0 1 7.6-10.5z"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="14.5" cy="8" r="1.4"/></symbol>
+<symbol id="i-ayambakar" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M15.5 5.5c3 0 5.5 2.6 5.5 5.8 0 2.4-1.5 4.4-3.6 5.3L14 19.5l-1.6 2.6a1.4 1.4 0 0 1-2.5-1.1l1-2.5-2.6-2.6a5.5 5.5 0 0 1 7.2-10.4z"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M7 2.5c-.8 1-.8 1.8 0 2.8.8-1 .8-1.8 0-2.8zM3.5 6c-.8 1-.8 1.8 0 2.8.8-1 .8-1.8 0-2.8z"/></symbol>
+<symbol id="i-lele" viewBox="0 0 24 24"><ellipse style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="11" cy="12" rx="6.5" ry="4"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M17.5 9.5l4-3v11l-4-3"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="7.5" cy="11" r=".9"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M4.5 10C3 9 2 7.8 2 7.8M4.5 14c-1.5 1-2.5 2.2-2.5 2.2"/></symbol>
+<symbol id="i-telur" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 3c3.6 0 6.5 4.4 6.5 9.2A6.5 6.5 0 0 1 5.5 12.2C5.5 7.4 8.4 3 12 3z"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="12" cy="13" r="2.6"/></symbol>
+<symbol id="i-tempe" viewBox="0 0 24 24"><rect style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" x="4" y="7" width="16" height="10" rx="2"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M8 7v10M12 7v10M16 7v10"/></symbol>
+<symbol id="i-tahu" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 4l9 15H3z"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 10.5l4.5 7.5h-9z"/></symbol>
+<symbol id="i-asem" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M4 13h16a8 8 0 0 1-16 0z"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 13c0-4 1-7 4-9 1 3-.5 7-4 9zM9 13c0-3-.8-5-3-6.5C5.2 9 6.5 12 9 13z"/></symbol>
+<symbol id="i-sop" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M4 13h16a8 8 0 0 1-16 0z"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M9 10c-1.2-1.5 1.2-2.5 0-4M13 10c-1.2-1.5 1.2-2.5 0-4M17 10c-1.2-1.5 1.2-2.5 0-4"/></symbol>
+<symbol id="i-rendang" viewBox="0 0 24 24"><rect style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" x="6" y="6" width="12" height="12" rx="3"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="10" cy="10" r="1"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="14.5" cy="13.5" r="1"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="11" cy="15" r="1"/></symbol>
+<symbol id="i-bandeng" viewBox="0 0 24 24"><ellipse style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="12" cy="12" rx="7" ry="4.2"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M19 9.5l3.5-2.5v10L19 14.5"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M9 8.5v7M12 8v8M15 8.5v7"/></symbol>
+<symbol id="i-cumi" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 3l5 9-5 3-5-3z"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 15c0 3-1 4.5-3 5.5M12 15c1.5 2.5 4 3 5.5 5M9.5 19.5c-1 .8-2.5 1-3.5.5"/></symbol>
+<symbol id="i-perkedel" viewBox="0 0 24 24"><circle style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="12" cy="12" r="7.5"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="9.5" cy="10" r="1"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="14" cy="13.5" r="1"/><circle style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" cx="12.5" cy="9" r=".8"/></symbol>
+<symbol id="i-kerupuk" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M12 3l2.2 2.7 3.4-.6.7 3.4 3 1.7-1.4 3.1 1.4 3.1-3 1.7-.7 3.4-3.4-.6L12 23.4l-2.2-2.7-3.4.6-.7-3.4-3-1.7 1.4-3.1L2.7 8.4l3-1.7.7-3.4 3.4.6z" transform="scale(.92) translate(1,0)"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M9 9.5l2 2M14.5 13l1.8 1.8M10.5 15.5l3-3"/></symbol>
+<symbol id="i-esteh" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M6 8h12l-1.5 12h-9z"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M9 12l1.5 1.5L9 15l1.5 1.5M13.5 11l1.5 1.5-1.5 1.5"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M15.5 8L18 3"/></symbol>
+<symbol id="i-teh" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M5 10h12v6a5 5 0 0 1-5 5H9a4 4 0 0 1-4-4z"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M17 11h1.5a2.5 2.5 0 0 1 0 5H17"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M9 7.5c-1-1.2 1-2 0-3.2M12.5 7.5c-1-1.2 1-2 0-3.2"/></symbol>
+<symbol id="i-sambal" viewBox="0 0 24 24"><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M6 14c3 5 9 6.5 13 4-3.5 1-8 .5-10.5-2C6.8 14.4 6 12 7 9.5c.4 2 1 3.6 3 4.5"/><path style="fill:none;stroke:var(--i2,var(--accent));stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M17 18.5c1.5.5 3 0 3.5-1"/><path style="fill:none;stroke:var(--i1,currentColor);stroke-width:var(--isw,1.8);stroke-linecap:round;stroke-linejoin:round" d="M7 9.5C7.5 7 9 5.5 11 5"/></symbol>
+</defs>
+</svg>
+
+<aside class="band band-kiri" aria-hidden="true"><div class="band-track" id="band-kiri"></div></aside>
+<aside class="band band-kanan" aria-hidden="true"><div class="band-track" id="band-kanan"></div></aside>
+
+<nav class="transport" aria-label="Transport tape">
+  <button type="button" class="tbtn" data-goto="atas" aria-label="Ke atas"><svg class="ic"><use href="#i-prev"/></svg></button>
+  <button type="button" class="tbtn" data-goto="side-a" aria-label="Ke Side A"><svg class="ic"><use href="#i-rewind"/></svg></button>
+  <button type="button" class="tbtn tbtn-play" data-goto="side-a" aria-label="Putar: ke daftar lauk"><svg class="ic"><use href="#i-play"/></svg></button>
+  <button type="button" class="tbtn" data-goto="side-b" aria-label="Ke Side B studio rekam"><svg class="ic"><use href="#i-ff"/></svg></button>
+  <button type="button" class="tbtn" data-goto="struk" aria-label="Ke struk"><svg class="ic"><use href="#i-next"/></svg></button>
+  <span class="tsep" aria-hidden="true"></span>
+  <button type="button" class="tbtn" id="btn-marquee" aria-pressed="false" aria-label="Jeda marquee"><svg class="ic"><use href="#i-pause"/></svg></button>
+  <button type="button" class="tbtn tbtn-teks" id="btn-gerak" aria-pressed="true"><span id="gerak-label">Gerak: nyala</span></button>
+</nav>
+
+<main id="konten">
+  <!-- ============ 0% KASET RAKSASA ============ -->
+  <header class="hero" id="atas">
+    <p class="kicker">SIDE A · SIDE B · WARUNG TEGAL</p>
+    <h1 class="judul-utama"><span class="outline" data-fill>PENCET</span> <span class="outline" data-fill>PLAY,</span> <span class="aksen-tangan">Mas</span></h1>
+    <p class="sub">Racik nasi bungkus semudah muter kaset. Pilih lauk, tekan <strong>REKAM</strong>, pesananmu jadi track baru + struk siap salin ke WA.</p>
+
+    <div class="kaset" id="kaset" role="img" aria-label="Kaset pita raksasa Wartegkaset">
+      <div class="kaset-label"><span class="aksen-tangan label-side">SIDE A</span><span class="label-nama">WARTEGKASET · 16 TRACK LAUK</span></div>
+      <div class="kaset-jendela">
+        <div class="pita" aria-hidden="true"></div>
+        <svg class="spul spul-kiri" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-reel"/></svg>
+        <svg class="spul spul-kanan" viewBox="0 0 48 48" aria-hidden="true"><use href="#i-reel"/></svg>
+      </div>
+      <div class="kaset-bawah">
+        <button type="button" class="btn-play-hero" id="btn-play-hero"><svg class="ic"><use href="#i-play"/></svg><span>PLAY</span></button>
+        <p class="harga-termurah">mulai <strong>Rp2.000</strong> <span class="ct">harga contoh</span></p>
+      </div>
+    </div>
+    <p class="scroll-hint" aria-hidden="true">gulir ke bawah — kamera masuk ke dalam kaset</p>
+  </header>
+
+  <!-- ============ 25% SIDE A ============ -->
+  <section class="scene" id="side-a" aria-labelledby="h-side-a">
+    <p class="kicker">TRACK 01–16</p>
+    <h2 class="judul-scene" id="h-side-a" tabindex="-1"><span class="outline" data-fill>SIDE A</span> <span class="aksen-tangan">daftar lauk</span></h2>
+    <p class="scene-desc">Enam belas track, enam belas lauk. Pencet <strong>PLAY</strong> di track mana pun buat zoom masuk lewat lubang spul, atau langsung <strong>+ MASUK BUNGKUS</strong>. <span class="ct">Semua harga di bawah ini contoh, bukan harga beneran.</span></p>
+    <ol class="tracks" id="daftar-track"></ol>
+
+    <div class="arsip" id="arsip" aria-labelledby="h-arsip">
+      <h3 id="h-arsip">Track rekamanmu <span class="aksen-tangan">side b</span></h3>
+      <p class="empty" id="arsip-kosong">Belum ada rekaman, Bos. Kaset kosong nggak bisa diputer — racik dulu di Side B, terus tekan REKAM.</p>
+      <ol class="arsip-list" id="arsip-list"></ol>
+    </div>
+  </section>
+
+  <!-- ============ 50% SCENE DETAIL (overlay zoom-through) ============ -->
+  <section class="track-scene" id="track-scene" aria-labelledby="h-track" hidden>
+    <div class="scene-kartu" role="dialog" aria-modal="true" aria-labelledby="h-track">
+      <p class="kicker">TRACK <span id="track-nomor">01</span> · <span id="track-durasi">3:12</span></p>
+      <h2 class="judul-scene" id="h-track" tabindex="-1"><span id="track-nama">Ayam Goreng</span></h2>
+      <svg class="track-ikon" viewBox="0 0 24 24" aria-hidden="true"><use id="track-ikon-use" href="#i-ayam"/></svg>
+      <p class="track-deskripsi" id="track-deskripsi"></p>
+      <p class="track-harga"><span class="harga" id="track-harga">Rp7.000</span> <span class="ct">harga contoh</span></p>
+      <div class="track-aksi">
+        <div class="stepper" role="group" aria-label="Jumlah porsi">
+          <button type="button" class="tbtn" id="track-kurang" aria-label="Kurangi"><svg class="ic"><use href="#i-minus"/></svg></button>
+          <span class="stepper-nilai" id="track-jumlah" aria-live="polite">1</span>
+          <button type="button" class="tbtn" id="track-tambah" aria-label="Tambah"><svg class="ic"><use href="#i-plus"/></svg></button>
+        </div>
+        <button type="button" class="btn-utama" id="track-masuk">+ MASUK BUNGKUS</button>
+        <button type="button" class="btn-ghost" id="track-rewind"><svg class="ic"><use href="#i-rewind"/></svg><span>REWIND</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 75% SIDE B ============ -->
+  <section class="scene" id="side-b" aria-labelledby="h-side-b">
+    <p class="kicker">STUDIO REKAM</p>
+    <h2 class="judul-scene" id="h-side-b" tabindex="-1"><span class="outline" data-fill>SIDE B</span> <span class="aksen-tangan">racik bungkusmu</span></h2>
+    <p class="scene-desc">Susun bungkusanmu di sini. Total jalan terus kayak odometer — kalau udah pas di kantong, tekan <strong>REKAM</strong>.</p>
+
+    <form class="racik" id="form-racik" novalidate>
+      <fieldset class="racik-blok">
+        <legend>Nasi <span class="ct">harga contoh</span></legend>
+        <div class="pilihan" role="radiogroup" aria-label="Porsi nasi">
+          <label class="opsi"><input type="radio" name="nasi" value="1x" checked><span class="opsi-kartu"><strong>1x</strong><em>Rp5.000</em></span></label>
+          <label class="opsi"><input type="radio" name="nasi" value="1.5x"><span class="opsi-kartu"><strong>1,5x</strong><em>Rp7.500</em></span></label>
+          <label class="opsi"><input type="radio" name="nasi" value="2x"><span class="opsi-kartu"><strong>2x</strong><em>Rp10.000</em></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="racik-blok">
+        <legend>Lauk di bungkus <span class="ct">harga contoh</span></legend>
+        <p class="empty" id="racik-kosong">Bungkusan masih kosong, Mas. Tambah lauk dari Side A biar kasetnya ada isinya.</p>
+        <ul class="racik-list" id="racik-list"></ul>
+      </fieldset>
+
+      <fieldset class="racik-blok">
+        <legend>Level pedas</legend>
+        <div class="pedas">
+          <input type="range" id="pedas" name="pedas" min="0" max="3" step="1" value="1" aria-label="Level pedas" aria-describedby="pedas-label">
+          <span class="pedas-nilai" id="pedas-label" aria-live="polite">Level 1 — santai</span>
+        </div>
+      </fieldset>
+
+      <fieldset class="racik-blok">
+        <legend>Makannya di mana</legend>
+        <div class="pilihan" role="radiogroup" aria-label="Tempat makan">
+          <label class="opsi"><input type="radio" name="tempat" value="bungkus" checked><span class="opsi-kartu"><strong>Dibungkus</strong><em>take away</em></span></label>
+          <label class="opsi"><input type="radio" name="tempat" value="sini"><span class="opsi-kartu"><strong>Makan sini</strong><em>di warung</em></span></label>
+        </div>
+      </fieldset>
+
+      <div class="total-bar">
+        <div class="total-info">
+          <span class="total-label">TOTAL</span>
+          <span class="total-nilai" id="total-nilai" aria-live="polite">Rp5.000</span>
+          <span class="ct">harga contoh</span>
+        </div>
+        <button type="submit" class="btn-rekam" id="btn-rekam"><svg class="ic"><use href="#i-record"/></svg><span>REKAM</span></button>
+      </div>
+      <p class="form-error" id="form-error" role="alert" hidden></p>
+    </form>
+  </section>
+
+  <!-- ============ 100% STRUK ============ -->
+  <section class="scene" id="struk" aria-labelledby="h-struk">
+    <p class="kicker">HASIL REKAMAN</p>
+    <h2 class="judul-scene" id="h-struk" tabindex="-1"><span class="outline" data-fill>STRUK</span> <span class="aksen-tangan">thermal</span></h2>
+    <p class="scene-desc" id="struk-desc">Struk muncul di sini setiap kamu menekan REKAM.</p>
+
+    <div class="struk-kertas" id="struk-kertas" hidden>
+      <div class="struk-isi" id="struk-isi" aria-live="polite"></div>
+      <p class="cap-direkam aksen-tangan" aria-hidden="true">DIREKAM</p>
+    </div>
+
+    <div class="struk-aksi" id="struk-aksi" hidden>
+      <button type="button" class="btn-utama" id="btn-wa"><svg class="ic"><use href="#i-share"/></svg><span>Salin ringkasan WA</span></button>
+      <button type="button" class="btn-ghost" id="btn-json"><svg class="ic"><use href="#i-download"/></svg><span>Unduh JSON</span></button>
+      <button type="button" class="btn-ghost" id="btn-tautan"><svg class="ic"><use href="#i-link"/></svg><span>Salin tautan</span></button>
+      <p class="aksi-status" id="aksi-status" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="easter-hint">
+      <p><svg class="ic"><use href="#i-kaset"/></svg> Kata Mas Kaset: ada tombol rahasia di keyboard. Coba ketik <kbd>rewind</kbd>.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="kaki">
+  <p><strong>WARTEGKASET</strong> — hari ke-14 "30 Days of Code". Semua harga yang tampil adalah <strong>contoh</strong> dan bukan harga beneran warung mana pun.</p>
+  <p>Ikon: Tabler Icons (MIT) + SVG custom digambar sendiri. Font: Angkor, Cousine, Alex Brush via Fontsource (OFL), self-host. Gerak: GSAP 3.12.5 + ScrollTrigger, self-host.</p>
+  <p class="aksen-tangan kaki-ttd">— Mas Kaset</p>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
